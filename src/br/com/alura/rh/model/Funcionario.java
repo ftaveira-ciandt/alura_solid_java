@@ -8,23 +8,17 @@ import br.com.alura.rh.ValidacaoException;
 
 public class Funcionario {
 
-	private String nome;
-	private String cpf;
-	private Cargo cargo;
-	private BigDecimal salario;
+	private DadosPessoais dadosPessoais;
 	private LocalDate dataUltimoReajuste;
 
 	public Funcionario(String nome, String cpf, Cargo cargo, BigDecimal salario) {
-		this.nome = nome;
-		this.cpf = cpf;
-		this.cargo = cargo;
-		this.salario = salario;
+		this.dadosPessoais = new DadosPessoais(nome, cpf, cargo, salario)
 	}
 
 	public void atualizarSalario(BigDecimal novoSalario) {
-		this.salario = novoSalario;
+		this.dadosPessoais.setSalario(novoSalario);
 		this.dataUltimoReajuste = LocalDate.now();
-
+	}
 
 	public String getNome() {
 		return nome;
@@ -64,5 +58,9 @@ public class Funcionario {
 	public void setDataUltimoReajuste(LocalDate dataUltimoReajuste) {
 		this.dataUltimoReajuste = dataUltimoReajuste;
 	}
+
+	public void promover(Cargo novoCargo) {
+		this.dadosPessoais.setCargo(novoCargo);
+		}
 
 }
