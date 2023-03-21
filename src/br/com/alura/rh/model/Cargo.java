@@ -1,8 +1,7 @@
 package br.com.alura.rh.model;
 
-
-
 public enum Cargo {
+
 	ASSISTENTE {
 		@Override
 		public Cargo getProximoCargo() {

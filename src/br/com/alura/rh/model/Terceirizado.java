@@ -1,23 +1,15 @@
 package br.com.alura.rh.model;
 
-public class Terceirizado extends Funcionario {
+import java.math.BigDecimal;
+
+public class Terceirizado {
 
     private DadosPessoais dadosPessoais;
-    private  String empresa;
+    private String empresa;
 
-    public Terceirizado (String nome, String cpf, Cargo cargo, BigDecimal salario,) {
+    public Terceirizado(String nome, String cpf, Cargo cargo, BigDecimal salario, String empresa) {
         this.dadosPessoais = new DadosPessoais(nome, cpf, cargo, salario);
         this.empresa = empresa;
-    }
-
-    public void promover(Cargo novoCargo) {
-        this.cargo = novoCargo;
-    }
-
-
-    public void atualizarSalario(BigDecimal novoSalario) {
-        super.atualizarSalario(novoSalario);
-
     }
 
     public String getEmpresa() {
@@ -27,6 +19,21 @@ public class Terceirizado extends Funcionario {
     public void setEmpresa(String empresa) {
         this.empresa = empresa;
     }
-}
+
+    public String getNome() {
+        return dadosPessoais.getNome();
+    }
+
+    public String getCpf() {
+        return dadosPessoais.getCpf();
+    }
+
+    public Cargo getCargo() {
+        return dadosPessoais.getCargo();
+    }
+
+    public BigDecimal getSalario() {
+        return dadosPessoais.getSalario();
+    }
 
 }
